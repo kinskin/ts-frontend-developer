@@ -3,11 +3,31 @@
 // Your solution shall use only [Vanilla JavaScript](http://vanilla-js.com).
 
 
+class Datasource {
 
-let getPrices = ()=>{
-    fetch(`https://pastebin.com/raw/KCJm3Kzb`)
-        .then(response => response.json())
-        .then(data => console.log(data))
+
+
+    getPrices(){
+        console.log('hello world')
+        fetch('https://pastebin.com/raw/KCJm3Kzb', {
+            method: 'GET',
+            mode: 'no-cors',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {return response.text()})
+        .then((data) => {
+            console.log(data ? JSON.parse(data.data.prices) : {})
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
 }
 
-getPrices()
+
+let ds = new Datasource();
+
+ds.getPrices()
