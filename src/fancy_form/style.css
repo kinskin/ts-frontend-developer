@@ -16,7 +16,7 @@ form {
 }
 
 form>input,
-form>textarea, 
+form>textarea,
 form>label {
   width: 100%;
   display: block;
@@ -43,4 +43,13 @@ form>button {
   font-weight: 900;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.displayNone{
+	display:none;
+}
+
+.display{
+	display:inline-block;
+	color:red;
 }

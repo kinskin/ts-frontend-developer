@@ -5,7 +5,6 @@
   <title>Fancy Form</title>
 
   <!-- You may add more stuff here -->
-  <script src="script.js"></script>
   <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -14,16 +13,29 @@
   <!-- You may wrap the form in your own elements if necessary. -->
   <form onsubmit="return !1">
     <label for="input-address">Bitcoin Address</label>
-    <input id="input-address" placeholder="16q4PinynazaMYfv24juNLkbjkDQxJo2dc" />
+    <input id="inputAddress" placeholder="16q4PinynazaMYfv24juNLkbjkDQxJo2dc" value=''/>
+    <small  id='addressDisplay' style="{display:none;}">Invalid input address entered</small>
+    <small  id='noValue1'>No input</small>
+    <br/>
+    <br/>
 
     <label for="input-amount">Amount to send</label>
-    <input id="input-amount" placeholder="0.0000" />
+    <input type='number' id="inputAmount" placeholder="0.0000" value=''/>
+    <small  id='amountDisplay'>Invalid amount entered</small>
+    <small  id='noValue2'>No input</small>
+    <br/>
+    <br/>
 
     <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" placeholder="SMS OTP" />
+    <input type="number" id="inputOtp" placeholder="SMS OTP" value=''/>
+    <small  id='otpDisplay'>Invalid OTP code</small>
+    <small  id='noValue3'>No input</small>
+    <br/>
+    <br/>
 
-    <button>SEND BTC</button>
+    <button id='submitButton'>SEND BTC</button>
   </form>
+  <script src="script.js"></script>
 </body>
 
 </html>
