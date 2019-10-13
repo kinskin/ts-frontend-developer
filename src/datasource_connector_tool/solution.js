@@ -9,21 +9,14 @@ class Datasource {
 
     getPrices(){
         console.log('hello world')
-        fetch('https://pastebin.com/raw/KCJm3Kzb', {
+        fetch('http://clickboard.herokuapp.com/lingdata', {
             method: 'GET',
-            mode: 'no-cors',
-            credentials: 'same-origin',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json; charset=UTF-8',
             }
         })
-        .then(response => {return response.text()})
-        .then((data) => {
-            console.log(data ? JSON.parse(data.data.prices) : {})
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+        .then(response => response.json())
+        .then(data => console.log(data))
     }
 }
 
